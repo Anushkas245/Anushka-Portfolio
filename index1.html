@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Anushka | Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/scrollreveal"></script>
+  <style>
+    :root {
+      --lilac: #c8a2c8;
+      --bg-light: #ffffff;
+      --bg-dark: #1c1b29;
+      --text-light: #f1f1f1;
+      --text-dark: #1c1b29;
+      --accent: #b47eb3;
+    }
+    * {
+      margin: 0; padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+      scroll-behavior: smooth;
+    }
+    body {
+      background: var(--bg-light);
+      color: var(--text-dark);
+      transition: all 0.4s ease;
+    }
+    body.dark {
+      background: var(--bg-dark);
+      color: var(--text-light);
+    }
+    header {
+      position: sticky; top: 0;
+      z-index: 999;
+      background: var(--lilac);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+    header h1 {
+      font-weight: 700;
+    }
+    nav a {
+      margin: 0 0.8rem;
+      text-decoration: none;
+      color: #fff;
+      position: relative;
+    }
+    nav a::after {
+      content: '';
+      height: 2px;
+      width: 0;
+      background: white;
+      position: absolute;
+      left: 0; bottom: -4px;
+      transition: 0.3s;
+    }
+    nav a:hover::after {
+      width: 100%;
+    }
+    .toggle-btn {
+      background: none;
+      border: none;
+      cursor: pointer;
+      font-size: 1.5rem;
+    }
+    .bulb {
+      animation: blink 1s infinite alternate;
+    }
+    @keyframes blink {
+      from { filter: brightness(100%); }
+      to { filter: brightness(150%); }
+    }
+    section {
+      padding: 4rem 2rem;
+      max-width: 1000px;
+      margin: auto;
+    }
+    .hero {
+      text-align: center;
+    }
+    .hero h2 {
+      font-size: 2rem;
+      margin-top: 1rem;
+    }
+    .hero img {
+      width: 120px;
+      border-radius: 50%;
+      margin: 1rem 0;
+    }
+    .btn {
+      background: var(--lilac);
+      border: none;
+      padding: 0.6rem 1.2rem;
+      color: white;
+      cursor: pointer;
+      margin-top: 1rem;
+      border-radius: 25px;
+    }
+    h2.section-title {
+      text-align: center;
+      margin-bottom: 2rem;
+      font-size: 1.8rem;
+      border-bottom: 2px solid var(--lilac);
+      display: inline-block;
+    }
+    .about {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      align-items: center;
+    }
+    .about img {
+      width: 180px;
+      border-radius: 15px;
+    }
+    .skills, .projects, .certifications, .education, .languages, .contact, .footer {
+      text-align: center;
+    }
+    .skills-category {
+    margin-bottom: 2rem; /* Adds vertical spacing between each skill section */
+    }
+    .skills-grid, .project-cards {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      justify-content: center;
+    }
+
+    /* Container */
+.container {
+  max-width: 900px; /* Increase width here */
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Education Card */
+.card {
+  background-color: #ffffff;
+  padding: 25px;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  margin-bottom: 30px;
+  transition: transform 0.3s ease;
+  width: 100%; /* Full width inside the container */
+}
+
+    .card {
+      background: rgba(200, 162, 200, 0.1);
+      padding: 1rem;
+      border-radius: 15px;
+      width: 250px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+    .card:hover {
+      transform: scale(1.03);
+      box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+    }
+    .contact-icons a {
+      margin: 0 1rem;
+      font-size: 1.5rem;
+      color: var(--lilac);
+      transition: 0.3s;
+    }
+    .contact-icons a:hover {
+      transform: scale(1.2);
+    }
+    .footer {
+      padding: 1rem;
+      background: var(--lilac);
+      color: white;
+    }
+    
+    @media (max-width: 768px) {
+      nav {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h2>Anushka Salkar</h2>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#skills">Skills</a>
+      <a href="#resume">Resume</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <button class="toggle-btn" onclick="toggleTheme()">
+      <span class="bulb">💡</span>
+    </button>
+  </header>
+
+  <section id="home" class="hero">
+    <h2>Hello, I'm Anushka</h2>
+    <p>MCA student at Sanjivani University | Passionate about Tech, Learning, and Building Smart Solutions.</p>
+    <img src="https://avatars.githubusercontent.com/u/9919?v=4" alt="Avatar">
+    <br/>
+   <!---- <button class="btn">Download Resume 📄</button>-->
+  </section>
+
+  <section id="about" style="padding: 3rem 1.5rem; background-color: #f7f7f7; color: #333; font-family: 'Segoe UI', sans-serif;">
+  <div style="max-width: 900px; margin: auto;">
+    <h2 style="font-size: 2rem; margin-bottom: 1rem; color: #222;">About Me</h2>
+    <p style="font-size: 1rem; line-height: 1.8;">
+      I am a fresher Computer Science graduate (2024–25) and currently pursuing my MCA at <strong>Sanjivani University</strong>.
+      I have a solid foundation in programming and problem-solving, and I’m driven by a strong passion for building impactful and efficient software solutions.
+    </p>
+    <p style="font-size: 1rem; line-height: 1.8; margin-top: 1rem;">
+      With a mindset rooted in curiosity, creativity, and continuous learning, I enjoy exploring how technology can be used to solve real-world problems.
+      I approach every project not just as a task, but as an opportunity to innovate and grow.
+    </p>
+    <p style="font-size: 1rem; line-height: 1.8; margin-top: 1rem;">
+      My technical skill set includes <strong>C#</strong>, <strong>Python</strong>, <strong>Java</strong>, <strong>SQL</strong>, <strong>HTML</strong>, <strong>CSS</strong>,
+      and <strong>Data Structures & Algorithms</strong>.
+      I have developed multiple projects including an <strong>E-commerce Website for a Bakery</strong>, <strong>Student Report Card Generator</strong>,
+      <strong>Expense Tracker</strong>, <strong>ATM Simulation System</strong>, and a <strong>Grade Checker</strong> — each reflecting my ability to apply my skills in practical and meaningful ways.
+    </p>
+    <p style="font-size: 1rem; line-height: 1.8; margin-top: 1rem;">
+      I am eager to contribute to challenging environments, collaborate with passionate teams, and continue evolving as a software developer in this ever-changing tech landscape.
+    </p>
+  </div>
+</section>
+
+<!-- Education Section -->
+<section id="education" class="section">
+  <div class="container">
+    <h2 class="section-title">🎓 Education</h2>
+
+    <div class="card">
+      <h3 class="card-title">Master of Computer Applications (MCA)</h3>
+      <p class="card-subtitle">Sanjivani University</p>
+      <p class="card-info">Pursuing | 2025 – 2027</p>
+    </div>
+
+    <div class="card">
+      <h3 class="card-title">Bachelor of Science in Computer Science (BSc CS)</h3>
+      <p class="card-subtitle">Padmashri Vikhe Patil College, Pravaranagar</p>
+      <p class="card-info">Graduated: 2024 | CGPA: 8.89</p>
+    </div>
+  </div>
+</section>
+
+
+<section id="skills">
+  <h2 class="section-title">Skills</h2>
+
+  <div class="skills-category">
+    <h3>Programming Languages</h3>
+    <div class="skills-grid">
+      <div class="card">C#</div>
+      <div class="card">Python</div>
+      <div class="card">Java</div>
+      <div class="card">SQL</div>
+      <div class="card">C</div>
+    </div>
+  </div>
+
+  <div class="skills-category">
+    <h3>Web Development</h3>
+    <div class="skills-grid">
+      <div class="card">HTML CSS </div>
+      <div class="card">JavaScript</div>
+      <div class="card">Bootstrap</div>
+    </div>
+  </div>
+
+  <div class="skills-category">
+    <h3>CS Fundamentals</h3>
+    <div class="skills-grid">
+      <div class="card">DSA</div>
+      <div class="card">OOP'S</div>
+      <div class="card">Windows Forms (C# Desktop Applications)</div>
+    </div>
+  </div>
+  <div class="skills-category">
+    <h3>Libraries & Frameworks</h3>
+    <div class="skills-grid">
+      <div class="card">OpenCV</div>
+      <div class="card">face_recognition (Python)</div>
+      <div class="card">PdfSharp (C#)</div>
+      <div class="card">ASP.NET Core MVC (Learning)
+</div>
+    </div>
+  </div>
+  <div class="skills-category">
+    <h3>Communication Languages</h3>
+    <div class="skills-grid">
+      <div class="card">English (Fluent)</div>
+      <div class="card">German (Beginner)</div>
+    </div>
+  </div>
+
+  <div class="skills-category">
+    <h3>Tools & Platforms</h3>
+    <div class="skills-grid">
+      <div class="card">Git & GitHub</div>
+      <div class="card">VS Code & Visual Studios</div>
+    </div>
+  </div>
+</section>
+
+
+  <section id="projects">
+    <h2 class="section-title">Projects</h2>
+    <div class="project-cards">
+      <div class="card">
+        <h3>E-Commerce Website for Bakery HTML, CSS, JS, Bootstrap</h3>
+        <p>Created a responsive bakery shop website with product listings, a shopping cart system, and
+        intuitive design</p>
+        <a href="#">GitHub</a> | <a href="#">Demo</a>
+      </div>
+      <div class="card">
+        <h3>Smart Task Manager</h3>
+        <p>A responsive ASP.NET Core MVC web app to manage daily tasks with priority labels, due dates, and completion tracking.</p>
+        <a href="#">GitHub</a> | <a href="#">Demo</a>
+      </div>
+      <div class="card">
+        <h3>Student Report Card Generator C# (Windows Forms)</h3>
+        <p>Developed a desktop application to calculate and generate student report cards with grades and
+        percentage, including PDF export using PdfSharp</p>
+        <a href="#">GitHub</a> | <a href="#">Demo</a>
+      </div>
+      <div class="card">
+        <h3>Expense Tracker with Python + Tailwind CSS</h3>
+        <p>Developed an expense tracker web app with basic AI logic for budget suggestions and a clean
+        Tailwind-based user interface</p>
+        <a href="#">GitHub</a> | <a href="#">Demo</a>
+      </div>
+      <div class="card">
+        <h3>Face Recognition Attendance System Python</h3>
+        <p>Built a face recognition-based attendance system using OpenCV and the face_recognition library.
+Attendance is automatically recorded and stored in Excel.</p>
+        <a href="#">GitHub</a> | <a href="#">Demo</a>
+      </div>
+      
+    </div>
+  </section>
+
+ <section id="resume">
+  <h2 class="section-title">Resume</h2>
+  <p>Click below to view or download my resume</p>
+  
+  <a href="Anushka_Resume.pdf" target="_blank" download>
+    <button class="btn">📄 View Resume</button>
+  </a>
+</section>
+
+
+  <section id="contact">
+    <h2 class="section-title">Contact</h2>
+    <p>Let's connect on my socials:</p>
+    <div class="contact-icons">
+      <a href="@anushkasalkar245@gmail.com"><i>📧 E-mail</i></a>
+     <br> <a href="www.linkedin.com/in/anushkas245"><i>💼 Linkedin</i></a>
+     <br> <a href="https://github.com/anushkas245"><i>👨‍💻 Github</i></a>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <p>© 2025 Anushka Salkar</p>
+  </footer>
+
+  <script>
+    function toggleTheme() {
+      document.body.classList.toggle('dark');
+    }
+
+    ScrollReveal().reveal('section', {
+      delay: 100,
+      duration: 1000,
+      origin: 'bottom',
+      distance: '30px',
+      reset: true
+    });
+  </script>
+</body>
+</html>
