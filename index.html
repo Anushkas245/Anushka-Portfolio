@@ -8,16 +8,15 @@
   <script src="https://unpkg.com/scrollreveal"></script>
   <style>
 .profile-img {
-  width: 300px;
-  height: 300px;
+  width: 250px;
+  height: 250px;
   object-fit: cover;
-  border-radius: 0px !important;  /* Force square shape */
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-  margin-top: 1rem;
+  border-radius: 10px; /* Use 0 for sharp edges */
   display: block;
-  margin-left: auto;
-  margin-right: auto;
+  margin: 2rem auto; /* Center horizontally */
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Optional styling */
 }
+
 
 
 
@@ -100,13 +99,6 @@
       font-size: 2rem;
       margin-top: 1rem;
     }
-.hero img {
-  width: 300px;
-  height: 300px;
-  object-fit: cover;
-  border-radius: 0;
-  margin: 1rem 0;
-}
 
     .btn {
       background: var(--lilac);
